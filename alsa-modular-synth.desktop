@@ -2,8 +2,8 @@
 Encoding=UTF-8
 Name=ALSA Modular Synth
 Comment=Modular soft syntheziter
-Comment[pl]=Modularny syntezator programowy
-Exec=/usr/bin/ams
+Comment[pl]=Programowy syntezator modularny
+Exec=ams
 Terminal=false
 Type=Application
 Categories=Application;AudioVideo;

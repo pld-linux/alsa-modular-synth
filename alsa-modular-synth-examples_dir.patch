@@ -1,0 +1,24 @@
+diff -aurN ams-1.6.0.orig/modularsynth.cpp ams-1.6.0/modularsynth.cpp
+--- ams-1.6.0.orig/modularsynth.cpp	2003-10-15 14:42:39.000000000 +0200
++++ ams-1.6.0/modularsynth.cpp	2003-10-26 00:57:02.281973016 +0200
+@@ -220,7 +220,7 @@
+                      "by Matthias Nagorni\n"
+                      "(c)2002-2003 SuSE AG Nuremberg\n\n"
+                      "Documentation and examples can be found in\n"
+-                     "/usr/share/doc/packages/kalsatools\n\n"
++                     "/usr/share/ams\n\n"
+                      "More presets and updates are available from\n"
+                      "http://alsamodular.sourceforge.net"
+     "\n\nAcknowledgements\n"
+diff -aurN ams-1.6.0.orig/README ams-1.6.0/README
+--- ams-1.6.0.orig/README	2003-10-15 12:23:43.000000000 +0200
++++ ams-1.6.0/README	2003-10-26 00:58:26.223212008 +0200
+@@ -33,7 +33,7 @@
+ 1) Start Kaconnect and vkeybd. Enable "View"-->"Controls"
+    and "View"-->"Pitchwheel" in vkeybd.
+ 2) Start AlsaModularSynth with ams.
+-3) Use "File"-->"Load" to load /usr/share/doc/packages/kalsatools/example_basic.ams
++3) Use "File"-->"Load" to load /usr/share/ams/example_basic.ams
+ 4) Use Kaconnect to connect vkeybd and AlsaModularSynth.
+ 5) Play vkeybd and listen to what happens when you move the pitch and
+    modulation wheels !
