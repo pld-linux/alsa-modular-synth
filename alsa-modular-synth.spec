@@ -96,12 +96,12 @@ Tutorial dla Alsa Modular Synth.
 
 %build
 %{__make} \
-    OPTFLAGS="%{rpmcflags}"
+	OPTFLAGS="%{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_desktopdir}} \
-	    $RPM_BUILD_ROOT%{_datadir}/ams/{demos,instruments,tutorial}
+	$RPM_BUILD_ROOT%{_datadir}/ams/{demos,instruments,tutorial}
 
 install ams $RPM_BUILD_ROOT%{_bindir}
 install demos/*.ams $RPM_BUILD_ROOT%{_datadir}/ams/demos
