@@ -1,20 +1,33 @@
-diff -aurN ams-1.5.9.orig/Makefile ams-1.5.9/Makefile
---- ams-1.5.9.orig/Makefile	2003-05-15 19:29:24.000000000 +0200
-+++ ams-1.5.9/Makefile	2003-06-19 16:02:12.000000000 +0200
-@@ -1,5 +1,5 @@
+diff -aurN ams-1.7.1.orig/Makefile ams-1.7.1/Makefile
+--- ams-1.7.1.orig/Makefile	2003-12-16 12:00:30.000000000 +0100
++++ ams-1.7.1/Makefile	2003-12-22 19:33:20.245245400 +0100
+@@ -1,13 +1,13 @@
 -QT_BASE_DIR=/usr/lib/qt3
 -QT_LIB_DIR=$(QT_BASE_DIR)/lib
 +QT_BASE_DIR=/usr
 +QT_LIB_DIR=$(QT_BASE_DIR)/lib/qt
  QT_BIN_DIR=$(QT_BASE_DIR)/bin
- QT_INCLUDE_DIR=$(QT_BASE_DIR)/include
+-QT_INCLUDE_DIR=$(QT_BASE_DIR)/include
++QT_INCLUDE_DIR=$(QT_BASE_DIR)/include/qt
  X11_LIB_DIR=/usr/X11R6/lib
-@@ -114,8 +114,6 @@
- 	-L$(QT_LIB_DIR) -L$(X11_LIB_DIR) \
- 	-lqt-mt -ljack -lasound -lsrfftw -lsfftw -lm 
+ LADSPA_PATH?=/usr/lib/ladspa:/usr/local/lib/ladspa
+ VERSION=1.7.1
  
--CXXFLAGS=-DQT_THREAD_SUPPORT -I$(QT_INCLUDE_DIR) -I/usr/X11R6/include -I. -O2 -g -Wall
--
- synth.o: synth.cpp synth.h synthdata.h module.h m_out.h m_wavout.h m_scope.h m_spectrum.h m_midiout.h
- capture.o: capture.cpp capture.h synthdata.h m_in.h m_jackout.h m_jackin.h
- synthdata.o: synthdata.cpp synthdata.h module.h port.h m_env.h m_advenv.h
+ #CXXFLAGS=-DQT_THREAD_SUPPORT -I$(QT_INCLUDE_DIR) -DLADSPA_PATH=\"$(LADSPA_PATH)\" -I/usr/X11R6/include -I. -O2 -g -Wall
+-CXXFLAGS=-DQT_THREAD_SUPPORT -I$(QT_INCLUDE_DIR) -DLADSPA_PATH=\"$(LADSPA_PATH)\" -I/usr/X11R6/include -I. -O2 -Wall
++CXXFLAGS=-DQT_THREAD_SUPPORT -I$(QT_INCLUDE_DIR) -DLADSPA_PATH=\"$(LADSPA_PATH)\" -I/usr/X11R6/include -I. $(OPTFLAGS) -Wall
+ 
+ AMS_O = synthdata.o module.o module.moc.o \
+ 	configdialog.o configdialog.moc.o \
+@@ -70,9 +70,9 @@
+ 	main.o alsa_driver.o
+ 
+ ams:	$(AMS_O)
+-	gcc -g -o ams $(AMS_O) \
++	$(CC) -g -o ams $(AMS_O) \
+ 	-L$(QT_LIB_DIR) -L$(X11_LIB_DIR) \
+-	-lqt-mt -ljack -lasound -lsrfftw -lsfftw -lm
++	-lqt-mt -ljack -lasound -lrfftw -lfftw -lm
+ 
+ clean:
+ 	/bin/rm -f *.o *.moc.cpp *~
