@@ -1,6 +1,6 @@
 diff -aurN ams-1.8.6.orig/Makefile ams-1.8.6/Makefile
 --- ams-1.8.6.orig/Makefile	2004-07-16 14:44:03.000000000 +0200
-+++ ams-1.8.6/Makefile	2004-07-23 18:49:44.033202648 +0200
++++ ams-1.8.6/Makefile	2004-07-23 19:01:31.145705208 +0200
 @@ -1,13 +1,13 @@
 -QT_BASE_DIR=/usr/lib/qt3
 -QT_LIB_DIR=$(QT_BASE_DIR)/lib
@@ -19,9 +19,12 @@ diff -aurN ams-1.8.6.orig/Makefile ams-1.8.6/Makefile
  
  AMS_O = synthdata.o module.o module.moc.o \
  	configdialog.o configdialog.moc.o \
-@@ -80,7 +80,7 @@
+@@ -78,9 +78,9 @@
+ 	main.o alsa_driver.o
+ 
  ams:	$(AMS_O)
- 	gcc -g -o ams $(AMS_O) \
+-	gcc -g -o ams $(AMS_O) \
++	$(CC) -g -o ams $(AMS_O) \
  	-L$(QT_LIB_DIR) -L$(X11_LIB_DIR) \
 -	-lqt-mt -ljack -lasound -lsrfftw -lsfftw -lm
 +	-lqt-mt -ljack -lasound -lrfftw -lfftw -lm
