@@ -1,24 +1,30 @@
+# TODO:
+# - separate expamples (subpkgs: tutorial, examples, instruments)
+# - more R (vco and rev plugins - .specs not written yet)
+# - post message about required plugins for fully workin' exmps
+# - icon (?)
+#
 %define		_name ams
 Summary:	Realtime modular synthesizer
 Summary(pl):	Modularny syntezator dzia³aj±cy w czasie rzeczywistym
 Name:		alsa-modular-synth
-Version:	1.6.0
-Release:	1
+Version:	1.7.1
+Release:	0.1
 License:	GPL
 Group:		X11/Applications/Sound
 Source0:	http://alsamodular.sourceforge.net/%{_name}-%{version}.tar.bz2
-# Source0-md5:	4781f154e5ee738a604e1a10d4ba26c4
+# Source0-md5:	eaf25afb1ec662b313a9dcc34be58f41
 Source1:	%{name}.desktop
 Patch0:		%{name}-build_fixes.patch
-Patch1:		%{name}-fftw_hack.patch
-Patch2:		%{name}-examples_dir.patch
+Patch1:		%{name}-examples_dir.patch
 URL:		http://alsamodular.sourceforge.net/
 BuildRequires:	XFree86-devel
 BuildRequires:	alsa-lib-devel >= 0.9.0
 BuildRequires:	fftw-devel
 BuildRequires:	jack-audio-connection-kit-devel >= 0.74.1
+BuildRequires:	ladspa-devel
 BuildRequires:	qt-devel >= 3.0.5
-Requires:	ladspa-mcp-plugins
+#Requires:	ladspa-mcp-plugins
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -43,21 +49,17 @@ czasie rzeczywistym. Zawiera:
 %setup -q -n %{_name}-%{version}
 %patch0 -p1
 %patch1 -p1
-%patch2 -p1
 
 %build
 %{__make} \
-    CXXFLAGS="-DQT_THREAD_SUPPORT -I%{_includedir}/qt \
-    -I/usr/X11R6/include \
-    -fno-exceptions -D_REENTRANT %{?debug:-DQT_NO_DEBUG} \
-    -I. -Wall %{rpmcflags}"
+    OPTFLAGS="%{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir}/ams,%{_desktopdir}}
 
 install ams $RPM_BUILD_ROOT%{_bindir}
-install *.ams $RPM_BUILD_ROOT%{_datadir}/ams
+#install *.ams $RPM_BUILD_ROOT%{_datadir}/ams
 install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
 
 %clean
@@ -68,5 +70,5 @@ rm -rf $RPM_BUILD_ROOT
 %doc README
 %attr(755,root,root) %{_bindir}/*
 %dir %{_datadir}/ams
-%{_datadir}/ams/*.ams
+#%%{_datadir}/ams/*.ams
 %{_desktopdir}/%{name}.desktop
