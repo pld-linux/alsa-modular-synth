@@ -1,6 +1,6 @@
-diff -aurN ams-1.7.2.orig/Makefile ams-1.7.2/Makefile
---- ams-1.7.2.orig/Makefile	2004-01-20 11:53:27.000000000 +0100
-+++ ams-1.7.2/Makefile	2004-01-23 17:30:40.321727648 +0100
+diff -aurN ams-1.8.3.orig/Makefile ams-1.8.3/Makefile
+--- ams-1.8.3.orig/Makefile	2004-05-26 17:27:00.000000000 +0200
++++ ams-1.8.3/Makefile	2004-06-01 23:28:49.537419056 +0200
 @@ -1,13 +1,13 @@
 -QT_BASE_DIR=/usr/lib/qt3
 -QT_LIB_DIR=$(QT_BASE_DIR)/lib
@@ -11,15 +11,15 @@ diff -aurN ams-1.7.2.orig/Makefile ams-1.7.2/Makefile
 +QT_INCLUDE_DIR=$(QT_BASE_DIR)/include/qt
  X11_LIB_DIR=/usr/X11R6/lib
  LADSPA_PATH?=/usr/lib/ladspa:/usr/local/lib/ladspa
- VERSION=1.7.2
+ VERSION=1.8.3
  
  #CXXFLAGS=-DQT_THREAD_SUPPORT -I$(QT_INCLUDE_DIR) -DLADSPA_PATH=\"$(LADSPA_PATH)\" -I/usr/X11R6/include -I. -O2 -g -Wall
 -CXXFLAGS=-DQT_THREAD_SUPPORT -I$(QT_INCLUDE_DIR) -DLADSPA_PATH=\"$(LADSPA_PATH)\" -I/usr/X11R6/include -I. -O2 -Wall
-+CXXFLAGS=-DQT_THREAD_SUPPORT -I$(QT_INCLUDE_DIR) -DLADSPA_PATH=\"$(LADSPA_PATH)\" -I/usr/X11R6/include -I. $(OPTFLAGS) -Wall 
++CXXFLAGS=-DQT_THREAD_SUPPORT -I$(QT_INCLUDE_DIR) -DLADSPA_PATH=\"$(LADSPA_PATH)\" -I/usr/X11R6/include -I. $(OPTFLAGS) -Wall
  
  AMS_O = synthdata.o module.o module.moc.o \
  	configdialog.o configdialog.moc.o \
-@@ -70,9 +70,9 @@
+@@ -76,9 +76,9 @@
  	main.o alsa_driver.o
  
  ams:	$(AMS_O)
