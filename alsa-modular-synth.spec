@@ -30,13 +30,13 @@ processor. It features:
 - JACK Support
 
 %description -l pl
-AlsaModularSynth jest syntezatorem dzia³aj±cym w czasie rzeczywistym
-i procesorem efektów. Zawiera:
-- Kontrolowan± przez MIDI modularn± syntezê programow±
-- Nak³adanie efektów w czasie rzeczywistym
-- Pe³n± kontrolê syntez i efektów poprzez MIDI
-- Zintegrowan± przegl±darkê LADSPA z mo¿liwo¶ci± wyszukiwania
-- Wsparcie dla JACK
+AlsaModularSynth jest syntezatorem i procesorem efektów dzia³aj±cym w
+czasie rzeczywistym. Zawiera:
+- kontrolowan± przez MIDI modularn± syntezê programow±
+- nak³adanie efektów w czasie rzeczywistym
+- pe³n± kontrolê syntezy i efektów poprzez MIDI
+- zintegrowan± przegl±darkê LADSPA z mo¿liwo¶ci± wyszukiwania
+- wsparcie dla JACK
 
 %prep
 %setup -q -n %{_name}-%{version}
@@ -46,16 +46,17 @@ i procesorem efektów. Zawiera:
 %build
 %{__make} -f make_ams \
     CXXFLAGS="-DQT_THREAD_SUPPORT -I%{_includedir}/qt \
-    -I%{_prefix}/X11R6/include \
+    -I/usr/X11R6/include \
     -fno-exceptions -D_REENTRANT %{?debug:-DQT_NO_DEBUG} \
-    -I. -g -Wall %{rpmcflags}"
+    -I. -Wall %{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir}/ams,%{_desktopdir}}
-install -c ams $RPM_BUILD_ROOT%{_bindir}
-install -c *.ams $RPM_BUILD_ROOT%{_datadir}/ams
-install -c %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
+
+install ams $RPM_BUILD_ROOT%{_bindir}
+install *.ams $RPM_BUILD_ROOT%{_datadir}/ams
+install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
