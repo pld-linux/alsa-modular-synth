@@ -41,7 +41,7 @@ czasie rzeczywistym. Zawiera:
 - nak³adanie efektów w czasie rzeczywistym
 - pe³n± kontrolê syntezy i efektów poprzez MIDI
 - zintegrowan± przegl±darkê LADSPA z mo¿liwo¶ci± wyszukiwania
-- wsparcie dla JACK
+- wsparcie dla JACK-a
 
 %package demos
 Summary:	Alsa Modular Synth demos
