@@ -6,5 +6,5 @@ Comment[pl]=Programowy syntezator modularny
 Exec=ams --presetpath=/usr/share/ams
 Terminal=false
 Type=Application
-Categories=AudioVideo;Audio;
+Categories=Qt;Audio;
 # vi: encoding=utf-8
