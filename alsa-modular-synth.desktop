@@ -1,9 +1,10 @@
 [Desktop Entry]
 Encoding=UTF-8
-Name=Alsa Modular Synth
+Name=ALSA Modular Synth
 Comment=Modular soft syntheziter
 Comment[pl]=Modularny syntezator programowy
 Exec=/usr/bin/ams
 Terminal=false
 Type=Application
 Categories=Application;AudioVideo;
+# vi: encoding=utf-8
