@@ -1,7 +1,5 @@
 # TODO:
-# - separate expamples (subpkgs: tutorial, examples, instruments)
-# - more R (vco and rev plugins - .specs not written yet)
-# - post message about required plugins for fully workin' exmps
+# - better descs in subpckgs
 # - icon (?)
 #
 %define		_name ams
@@ -9,7 +7,7 @@ Summary:	Realtime modular synthesizer
 Summary(pl):	Modularny syntezator dzia³aj±cy w czasie rzeczywistym
 Name:		alsa-modular-synth
 Version:	1.7.1
-Release:	0.1
+Release:	1
 License:	GPL
 Group:		X11/Applications/Sound
 Source0:	http://alsamodular.sourceforge.net/%{_name}-%{version}.tar.bz2
@@ -24,7 +22,6 @@ BuildRequires:	fftw-devel
 BuildRequires:	jack-audio-connection-kit-devel >= 0.74.1
 BuildRequires:	ladspa-devel
 BuildRequires:	qt-devel >= 3.0.5
-#Requires:	ladspa-mcp-plugins
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -45,6 +42,51 @@ czasie rzeczywistym. Zawiera:
 - zintegrowan± przegl±darkê LADSPA z mo¿liwo¶ci± wyszukiwania
 - wsparcie dla JACK
 
+%package demos
+Summary:	Alsa Modular Synth demos
+Summary(pl):	Dema Alsa Modular Synth
+Group:		X11/Applications/Sound
+Requires:	%{name} = %{version}
+Requires:	ladspa-mcp-plugins
+Requires:	ladspa-rev-plugins
+Requires:	ladspa-vco-plugins
+
+%description demos
+Alsa Modular Synth demos.
+
+%description demos -l pl
+Dema Alsa Modular Synth.
+
+%package instruments
+Summary:	Alsa Modular Synth instruments examples
+Summary(pl):	Przyk³ady instrumentów dla Alsa Modular Synth
+Group:		X11/Applications/Sound
+Requires:	%{name} = %{version}
+Requires:	ladspa-mcp-plugins
+Requires:	ladspa-rev-plugins
+Requires:	ladspa-vco-plugins
+
+%description instruments
+Instruments examples.
+
+%description instruments -l pl
+Przyk³adowe instrumenty.
+
+%package tutorial
+Summary:	Alsa Modular Synth tutorial
+Summary(pl):	Alsa Modular Synth
+Group:		X11/Applications/Sound
+Requires:	%{name} = %{version}
+Requires:	ladspa-mcp-plugins
+Requires:	ladspa-rev-plugins
+Requires:	ladspa-vco-plugins
+
+%description tutorial
+Alsa Modular Synth tutorial.
+
+%description tutorial -l pl
+Tutorial dla Alsa Modular Synth.
+
 %prep
 %setup -q -n %{_name}-%{version}
 %patch0 -p1
@@ -56,10 +98,13 @@ czasie rzeczywistym. Zawiera:
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir}/ams,%{_desktopdir}}
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_desktopdir}} \
+	    $RPM_BUILD_ROOT%{_datadir}/ams/{demos,instruments,tutorial}
 
 install ams $RPM_BUILD_ROOT%{_bindir}
-#install *.ams $RPM_BUILD_ROOT%{_datadir}/ams
+install demos/*.ams $RPM_BUILD_ROOT%{_datadir}/ams/demos
+install instruments/*.ams $RPM_BUILD_ROOT%{_datadir}/ams/instruments
+install tutorial/*.ams $RPM_BUILD_ROOT%{_datadir}/ams/tutorial
 install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
 
 %clean
@@ -70,5 +115,16 @@ rm -rf $RPM_BUILD_ROOT
 %doc README
 %attr(755,root,root) %{_bindir}/*
 %dir %{_datadir}/ams
-#%%{_datadir}/ams/*.ams
 %{_desktopdir}/%{name}.desktop
+
+%files demos
+%defattr(644,root,root,755)
+%{_datadir}/ams/demos/*.ams
+
+%files instruments
+%defattr(644,root,root,755)
+%{_datadir}/ams/instruments/*.ams
+
+%files tutorial
+%defattr(644,root,root,755)
+%{_datadir}/ams/tutorial/*.ams
