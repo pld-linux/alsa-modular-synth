@@ -1,0 +1,12 @@
+diff -aurN ams-1.5.9.orig/make_ams ams-1.5.9/make_ams
+--- ams-1.5.9.orig/make_ams	2003-05-15 19:29:24.000000000 +0200
++++ ams-1.5.9/make_ams	2003-06-19 16:03:44.000000000 +0200
+@@ -112,7 +112,7 @@
+         modularsynth.o modularsynth.moc.o \
+ 	main.o \
+ 	-L$(QT_LIB_DIR) -L$(X11_LIB_DIR) \
+-	-lqt-mt -ljack -lasound -lsrfftw -lsfftw -lm 
++	-lqt-mt -ljack -lasound -lrfftw -lfftw -lm 
+ 
+ CXXFLAGS=-DQT_THREAD_SUPPORT -I$(QT_INCLUDE_DIR) -I/usr/X11R6/include -I. -O2 -g -Wall
+ 

@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Alsa Modular Synth
+Comment=Modular soft syntheziter
+Comment[pl]=Modularny syntezator programowy
+Exec=/usr/bin/ams
+Terminal=0
+Type=Application
