@@ -14,7 +14,7 @@ Patch1:		%{name}-fftw_hack.patch
 URL:		http://alsamodular.sourceforge.net/
 BuildRequires:	XFree86-devel
 BuildRequires:	alsa-lib-devel >= 0.9.0
-BuildRequires:	fftw-devel 
+BuildRequires:	fftw-devel
 BuildRequires:	jack-audio-connection-kit-devel >= 0.74.1
 BuildRequires:	ladspa-devel
 BuildRequires:	qt-devel >= 3.0.5
