@@ -2,12 +2,12 @@
 Summary:	Realtime modular synthesizer
 Summary(pl):	Modularny syntezator dzia³aj±cy w czasie rzeczywistym
 Name:		alsa-modular-synth
-Version:	1.5.12
+Version:	1.6.0
 Release:	0.1
 License:	GPL
 Group:		X11/Applications/Sound
 Source0:	http://alsamodular.sourceforge.net/%{_name}-%{version}.tar.bz2
-# Source0-md5:	ef366e3b4a1c0519420c8736d1445795
+# Source0-md5:	4781f154e5ee738a604e1a10d4ba26c4
 Source1:	%{name}.desktop
 Patch0:		%{name}-build_fixes.patch
 Patch1:		%{name}-fftw_hack.patch
