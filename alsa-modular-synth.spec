@@ -6,12 +6,12 @@
 Summary:	Realtime modular synthesizer
 Summary(pl):	Modularny syntezator dzia³aj±cy w czasie rzeczywistym
 Name:		alsa-modular-synth
-Version:	1.7.7
+Version:	1.8.0
 Release:	1
 License:	GPL
 Group:		X11/Applications/Sound
 Source0:	http://dl.sourceforge.net/alsamodular/%{_name}-%{version}.tar.bz2
-# Source0-md5:	dba5494e7df43dff63e5465151aaee6a
+# Source0-md5:	1c81fc185f4d1438de431a396796e88a
 Source1:	%{name}.desktop
 Patch0:		%{name}-build_fixes.patch
 Patch1:		%{name}-examples_dir.patch
@@ -47,8 +47,8 @@ czasie rzeczywistym. Zawiera:
 Summary:	Alsa Modular Synth demos
 Summary(pl):	Dema Alsa Modular Synth
 Group:		X11/Applications/Sound
-Requires:	%{name} = %{version}
-Requires:	ladspa-mcp-plugins
+Requires:	%{name} = %{version}-%{release}
+Requires:	ladspa-mcp-plugins >= 0.3.0
 Requires:	ladspa-rev-plugins
 Requires:	ladspa-vco-plugins
 
@@ -62,8 +62,8 @@ Dema Alsa Modular Synth.
 Summary:	Alsa Modular Synth instruments examples
 Summary(pl):	Przyk³ady instrumentów dla Alsa Modular Synth
 Group:		X11/Applications/Sound
-Requires:	%{name} = %{version}
-Requires:	ladspa-mcp-plugins
+Requires:	%{name} = %{version}-%{release}
+Requires:	ladspa-mcp-plugins >= 0.3.0
 Requires:	ladspa-rev-plugins
 Requires:	ladspa-vco-plugins
 
@@ -77,8 +77,8 @@ Przyk³adowe instrumenty.
 Summary:	Alsa Modular Synth tutorial
 Summary(pl):	Alsa Modular Synth
 Group:		X11/Applications/Sound
-Requires:	%{name} = %{version}
-Requires:	ladspa-mcp-plugins
+Requires:	%{name} = %{version}-%{release}
+Requires:	ladspa-mcp-plugins >= 0.3.0
 Requires:	ladspa-rev-plugins
 Requires:	ladspa-vco-plugins
 
