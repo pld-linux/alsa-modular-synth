@@ -7,7 +7,7 @@ Release:	0.1
 License:	GPL
 Group:		X11/Applications/Sound
 Source0:	http://alsamodular.sourceforge.net/%{_name}-%{version}.tar.bz2
-# Source0-md5:	1f36a478f5aa339d3e88cd04fd1496b0
+# Source0-md5:	a75eae7007e85bd151133208fd935644
 Source1:	%{name}.desktop
 Patch0:		%{name}-build_fixes.patch
 Patch1:		%{name}-fftw_hack.patch
@@ -17,7 +17,7 @@ BuildRequires:	alsa-lib-devel >= 0.9.0
 BuildRequires:	fftw-devel
 BuildRequires:	jack-audio-connection-kit-devel >= 0.74.1
 BuildRequires:	qt-devel >= 3.0.5
-Requires:	ladspa-devel
+Requires:	ladspa
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
