@@ -1,6 +1,6 @@
-diff -aurN ams-1.5.9.orig/make_ams ams-1.5.9/make_ams
---- ams-1.5.9.orig/make_ams	2003-05-15 19:29:24.000000000 +0200
-+++ ams-1.5.9/make_ams	2003-06-19 16:02:12.000000000 +0200
+diff -aurN ams-1.5.9.orig/Makefile ams-1.5.9/Makefile
+--- ams-1.5.9.orig/Makefile	2003-05-15 19:29:24.000000000 +0200
++++ ams-1.5.9/Makefile	2003-06-19 16:02:12.000000000 +0200
 @@ -1,5 +1,5 @@
 -QT_BASE_DIR=/usr/lib/qt3
 -QT_LIB_DIR=$(QT_BASE_DIR)/lib
