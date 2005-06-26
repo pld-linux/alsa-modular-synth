@@ -48,6 +48,7 @@ Summary:	Alsa Modular Synth demos
 Summary(pl):	Dema Alsa Modular Synth
 Group:		X11/Applications/Sound
 Requires:	%{name} = %{version}-%{release}
+Requires:	ladspa-cmt-plugins
 Requires:	ladspa-mcp-plugins >= 0.3.0
 Requires:	ladspa-rev-plugins
 Requires:	ladspa-vco-plugins
@@ -63,6 +64,7 @@ Summary:	Alsa Modular Synth instruments examples
 Summary(pl):	Przyk³ady instrumentów dla Alsa Modular Synth
 Group:		X11/Applications/Sound
 Requires:	%{name} = %{version}-%{release}
+Requires:	ladspa-cmt-plugins
 Requires:	ladspa-mcp-plugins >= 0.3.0
 Requires:	ladspa-rev-plugins
 Requires:	ladspa-vco-plugins
@@ -78,6 +80,7 @@ Summary:	Alsa Modular Synth tutorial
 Summary(pl):	Alsa Modular Synth
 Group:		X11/Applications/Sound
 Requires:	%{name} = %{version}-%{release}
+Requires:	ladspa-cmt-plugins
 Requires:	ladspa-mcp-plugins >= 0.3.0
 Requires:	ladspa-rev-plugins
 Requires:	ladspa-vco-plugins
