@@ -4,7 +4,7 @@
 #
 %define		_name ams
 Summary:	Realtime modular synthesizer
-Summary(pl.UTF-8):   Modularny syntezator działający w czasie rzeczywistym
+Summary(pl.UTF-8):	Modularny syntezator działający w czasie rzeczywistym
 Name:		alsa-modular-synth
 Version:	1.8.7
 Release:	1
@@ -45,7 +45,7 @@ czasie rzeczywistym. Zawiera:
 
 %package demos
 Summary:	Alsa Modular Synth demos
-Summary(pl.UTF-8):   Dema Alsa Modular Synth
+Summary(pl.UTF-8):	Dema Alsa Modular Synth
 Group:		X11/Applications/Sound
 Requires:	%{name} = %{version}-%{release}
 Requires:	ladspa-cmt-plugins
@@ -61,7 +61,7 @@ Dema Alsa Modular Synth.
 
 %package instruments
 Summary:	Alsa Modular Synth instruments examples
-Summary(pl.UTF-8):   Przykłady instrumentów dla Alsa Modular Synth
+Summary(pl.UTF-8):	Przykłady instrumentów dla Alsa Modular Synth
 Group:		X11/Applications/Sound
 Requires:	%{name} = %{version}-%{release}
 Requires:	ladspa-cmt-plugins
@@ -77,7 +77,7 @@ Przykładowe instrumenty.
 
 %package tutorial
 Summary:	Alsa Modular Synth tutorial
-Summary(pl.UTF-8):   Alsa Modular Synth
+Summary(pl.UTF-8):	Alsa Modular Synth
 Group:		X11/Applications/Sound
 Requires:	%{name} = %{version}-%{release}
 Requires:	ladspa-cmt-plugins
