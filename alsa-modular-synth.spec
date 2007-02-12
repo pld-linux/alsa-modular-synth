@@ -4,7 +4,7 @@
 #
 %define		_name ams
 Summary:	Realtime modular synthesizer
-Summary(pl):	Modularny syntezator dzia³aj±cy w czasie rzeczywistym
+Summary(pl.UTF-8):   Modularny syntezator dziaÅ‚ajÄ…cy w czasie rzeczywistym
 Name:		alsa-modular-synth
 Version:	1.8.7
 Release:	1
@@ -34,18 +34,18 @@ processor. It features:
 - Integrated LADSPA Browser with search capability
 - JACK Support
 
-%description -l pl
-AlsaModularSynth jest syntezatorem i procesorem efektów dzia³aj±cym w
+%description -l pl.UTF-8
+AlsaModularSynth jest syntezatorem i procesorem efektÃ³w dziaÅ‚ajÄ…cym w
 czasie rzeczywistym. Zawiera:
-- kontrolowan± przez MIDI modularn± syntezê programow±
-- nak³adanie efektów w czasie rzeczywistym
-- pe³n± kontrolê syntezy i efektów poprzez MIDI
-- zintegrowan± przegl±darkê LADSPA z mo¿liwo¶ci± wyszukiwania
+- kontrolowanÄ… przez MIDI modularnÄ… syntezÄ™ programowÄ…
+- nakÅ‚adanie efektÃ³w w czasie rzeczywistym
+- peÅ‚nÄ… kontrolÄ™ syntezy i efektÃ³w poprzez MIDI
+- zintegrowanÄ… przeglÄ…darkÄ™ LADSPA z moÅ¼liwoÅ›ciÄ… wyszukiwania
 - wsparcie dla JACK-a
 
 %package demos
 Summary:	Alsa Modular Synth demos
-Summary(pl):	Dema Alsa Modular Synth
+Summary(pl.UTF-8):   Dema Alsa Modular Synth
 Group:		X11/Applications/Sound
 Requires:	%{name} = %{version}-%{release}
 Requires:	ladspa-cmt-plugins
@@ -56,12 +56,12 @@ Requires:	ladspa-vco-plugins
 %description demos
 Alsa Modular Synth demos.
 
-%description demos -l pl
+%description demos -l pl.UTF-8
 Dema Alsa Modular Synth.
 
 %package instruments
 Summary:	Alsa Modular Synth instruments examples
-Summary(pl):	Przyk³ady instrumentów dla Alsa Modular Synth
+Summary(pl.UTF-8):   PrzykÅ‚ady instrumentÃ³w dla Alsa Modular Synth
 Group:		X11/Applications/Sound
 Requires:	%{name} = %{version}-%{release}
 Requires:	ladspa-cmt-plugins
@@ -72,12 +72,12 @@ Requires:	ladspa-vco-plugins
 %description instruments
 Instruments examples.
 
-%description instruments -l pl
-Przyk³adowe instrumenty.
+%description instruments -l pl.UTF-8
+PrzykÅ‚adowe instrumenty.
 
 %package tutorial
 Summary:	Alsa Modular Synth tutorial
-Summary(pl):	Alsa Modular Synth
+Summary(pl.UTF-8):   Alsa Modular Synth
 Group:		X11/Applications/Sound
 Requires:	%{name} = %{version}-%{release}
 Requires:	ladspa-cmt-plugins
@@ -88,7 +88,7 @@ Requires:	ladspa-vco-plugins
 %description tutorial
 Alsa Modular Synth tutorial.
 
-%description tutorial -l pl
+%description tutorial -l pl.UTF-8
 Tutorial dla Alsa Modular Synth.
 
 %prep
