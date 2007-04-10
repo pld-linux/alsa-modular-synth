@@ -22,7 +22,7 @@ BuildRequires:	clalsadrv-devel
 BuildRequires:	fftw-devel >= 2.1.5-2
 BuildRequires:	jack-audio-connection-kit-devel >= 0.74.1
 BuildRequires:	ladspa-devel
-BuildRequires:	qt-devel >= 3.0.5
+BuildRequires:	qt-devel >= 3:3.0.5
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
